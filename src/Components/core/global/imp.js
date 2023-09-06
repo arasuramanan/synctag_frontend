@@ -1,0 +1,1 @@
+export const API = "https://fsd-b.onrender.com/api"
