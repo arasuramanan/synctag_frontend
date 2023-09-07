@@ -2,7 +2,8 @@ import './addEmployee.css';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-// import { API } from '../global/imp';
+
+
 
 const AddEmployee = () => {
     const navigate = useNavigate();
@@ -26,7 +27,7 @@ const AddEmployee = () => {
 
         console.log('Submitting employee details...')
         try{
-            const response = await axios.post("https://fsd-demo-backend-e3dn.onrender.com/api/employees", employeeDetails);
+            const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/employees`, employeeDetails);
             //  const response = await axios.post("https://fsd-b.onrender.com/api", employeeDetails);
             if(response){
                 setEmployeeDetails({

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-// import { API } from '../global/imp';
+
 
 const EmployeeList = () => {
     const [employees, setEmployees] = useState([]);
@@ -12,7 +12,7 @@ const EmployeeList = () => {
 
     const getEmployees = async () => {
         try{
-            const response = await axios.get("https://fsd-demo-backend-e3dn.onrender.com/api/employees");
+            const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/employees`);
            
             setEmployees(response.data);
         }catch(error){
